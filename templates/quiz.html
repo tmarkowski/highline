@@ -1,1 +1,181 @@
-<!--use jinja-->
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>OnLine HighLine Quiz </title>
+    <link rel="stylesheet" href="static/quiz.css" />
+</head>
+<body>
+<div>
+    <h1>
+        What NYC tourist destination is the tree on top of the tank mirror?
+    </h1>
+    <hr />
+    
+    </div>
+    <div id="block-1" style="padding: 10px;">
+      <label for="option-1" style=" padding: 5px; font-size: 2.5rem;">
+        <input
+          type="radio"
+          name="option"
+          value="answer one"
+          id="option-1"
+          style="transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;"
+        />
+        The Statue of Liberty</label
+      >
+      <span id="result-1"></span>
+    </div>
+    <hr />
+  
+    
+    <div id="block-2" style="padding: 10px;">
+      <label for="option-2" style=" padding: 5px; font-size: 2.5rem;">
+        <input
+          type="radio"
+          name="option"
+          value="answer two"
+          id="option-2"
+          style="transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;"
+        />
+        Effiel Tower</label
+      >
+      <span id="result-2"></span>
+    </div>
+    <hr />
+  
+    
+    <div id="block-3" style="padding: 10px;">
+      <label for="option-3" style=" padding: 5px; font-size: 2.5rem;">
+        <input
+          type="radio"
+          name="option"
+          value="answer three"
+          id="option-3"
+          style="transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;"
+        />
+         Central Park</label
+      >
+      <span id="result-3"></span>
+    </div>
+    <hr />
+  
+    <div id="block-4" style="padding: 10px;">
+      <label for="option-4" style=" padding: 5px; font-size: 2.5rem;">
+        <input
+          type="radio"
+          name="option"
+          value="answer four"
+          id="option-4"
+          style="transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;"
+        />
+        Empire State Building</label
+      >
+      <span id="result-4"></span>
+    </div>
+    <hr />
+    <button
+      type="button"
+      onclick="displayAnswer1()"
+    >
+      Submit
+    </button>
+  
+  
+  <a id="showanswer1"></a>
+  <script>
+    //    The function evaluates the answer and displays result
+    function displayAnswer1() {
+      if (document.getElementById("option-1").checked) {
+        document.getElementById("block-1").style.border = "3px solid limegreen";
+        document.getElementById("result-1").style.color = "limegreen";
+        document.getElementById("result-1").innerHTML = "Correct!";
+      }
+      if (document.getElementById("option-2").checked) {
+        document.getElementById("block-2").style.border = "3px solid red";
+        document.getElementById("result-2").style.color = "red";
+        document.getElementById("result-2").innerHTML = "Incorrect!";
+        showCorrectAnswer1();
+      }
+      if (document.getElementById("option-3").checked) {
+        document.getElementById("block-3").style.border = "3px solid red";
+        document.getElementById("result-3").style.color = "red";
+        document.getElementById("result-3").innerHTML = "Incorrect!";
+        showCorrectAnswer1();
+      }
+      if (document.getElementById("option-4").checked) {
+        document.getElementById("block-4").style.border = "3px solid red";
+        document.getElementById("result-4").style.color = "red";
+        document.getElementById("result-1").innerHTML = "Incorrect!";
+        showCorrectAnswer1();
+      }
+    }
+    
+    
+    
+    
+    
+    // the functon displays the link to the correct answer
+    function showCorrectAnswer1() {
+      let showAnswer1 = document.createElement("p");
+      showAnswer1.innerHTML = "Show Correct Answer";
+      showAnswer1.style.position = "relative";
+      showAnswer1.style.top = "-180px";
+      showAnswer1.style.fontSize = "1.75rem";
+      document.getElementById("showanswer1").appendChild(showAnswer1);
+      showAnswer1.addEventListener("click", () => {
+        document.getElementById("block-1").style.border = "3px solid limegreen";
+        document.getElementById("result-1").style.color = "limegreen";
+        document.getElementById("result-1").innerHTML = "Correct!";
+        document.getElementById("showanswer1").removeChild(showAnswer1);
+      });
+    }
+   function showIncorrectAnswer() {
+      let showAnswer1 = document.createElement("p");
+      showAnswer1.innerHTML = "Show Correct Answer";
+      showAnswer1.style.position = "relative";
+      showAnswer1.style.top = "-180px";
+      showAnswer1.style.fontSize = "1.75rem";
+      document.getElementById("showanswer1").appendChild(showAnswer1);
+      showAnswer1.addEventListener("click", () => {
+         document.getElementById("block-4").style.border = "3px solid red";
+        document.getElementById("result-4").style.color = "red";
+        document.getElementById("result-1").innerHTML = "Incorrect!";
+        showCorrectAnswer1();
+      });
+    }
+  </script>
+  
+
+
+<!--use jinja
+
+    USE SAMPLE QUIZ- use jinja later 
+
+    3 multiple choice questions 
+    4 answers each - similar kahoot 
+    visual whewn answer is correct / incorrect 
+    1. click, YAY or No
+    2.  click, YAY or No
+    3. click, YAY or No
+    you got 1/3 correct / etc. 2/3 or 3/3 yay! 
+
+    examples of quesitons 
+    "when did ___ make this scupture?"
+    "without turning around what color is the artwork"
+    etc. 
+
+    starting off w/ 2 artworks 
+
+    -make info page 
+    -make splash page
+    -FILLEr- dont worry abt jinja / just template / filler 
+
+    -keep working on API- finish api 
+
+-->
+
+
+
+
+</body>
+</html>
